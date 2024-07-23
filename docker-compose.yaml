@@ -1,0 +1,20 @@
+services:
+  frontend:
+    container_name: frontend-container
+    image: miraclezz/se-frontend:latest
+    ports:
+      - "3000:80"  
+    networks:
+      - se
+
+  backend:
+    container_name: backend-container
+    image: miraclezz/se-backend:latest
+    ports:
+      - "8080:8080"
+    networks:
+      - se
+
+networks:
+  se:
+    driver: bridge
